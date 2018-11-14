@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block body %}
+{% from "_formhelpers.html" import render_field %}
+
+<html>
+<head>
+    <title>iSave</title>
+
+<style>
+
+    body{
+    background: rgba(124, 129, 154, 0.2);
+    }
+
+    #bod{
+    margin-left: 450px;
+    margin-right: 450px;
+    padding: 20px 40px 25px 40px;
+    background: rgba(124, 129, 154, 0.25);
+
+    border-radius: 20px;
+    }
+</style>
+</head>
+<body>
+
+<br/>
+<div id="bod">
+
+    <h1>Login Here</h1>
+
+ <br/>
+
+    <form method='POST' action="/login">
+
+        {{ form.csrf_token }}
+        <div class="form-group">{{ render_field(form.username, class_="form-control") }}</div>
+        <div class="form-group">{{ render_field(form.password, class_="form-control") }}</div>
+        <small><a href="#">Forgot Password</a></small>
+        <br/>
+        <br/>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+
+</body>
+</html>
+{% endblock %}
