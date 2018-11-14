@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+{% block body %}
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css" type="text/css"/>
+
+    <style>
+      .extra_margin{
+          margin-top: 10px;
+        }
+
+      span.tags
+        {
+        background: #1abc9c;
+        border-radius: 2px;
+        color: #f5f5f5;
+        font-weight: bold;
+        padding: 2px 4px;
+        }
+    </style>
+  </head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <!--First row-->
+    <div class="row extra_margin">
+
+      <!--left column -->
+      <div class="col-md-4 col-sm-12 col-xs-12">
+
+          <div class="text-center">
+              <img src="./templates/images.png" class="img-rounded">
+              <h2>John Doe</h2>
+
+              <p style="text-align:center;font-size: smaller;" id="user-frid">Username: John_Doe</p>
+              <p style="text-align:center;font-size: smaller;overflow-wrap: break-word;" id="user-email">jdoe@gmail.com</p>
+              <p style="text-align:center;font-size: smaller;"><strong>Account status: </strong><span class="tags" id="user-status">Active</span></p>
+
+              <p>
+                <a class="btn btn-primary btn-xs" href="#" role="button">Facebook</a>
+                <a class="btn btn-primary btn-xs" href="#" role="button">Twitter</a>
+                <a class="btn btn-primary btn-xs" href="#" role="button">Instagram</a>
+                <a class="btn btn-primary btn-xs" href="#" role="button">Website</a>
+              </p>
+
+          </div>
+      </div><!--End Column-->
+
+      <!--Right column-->
+      <div class="col-md-8 col-sm-* col-xs-*">
+
+        <p class="lead">...</p>
+
+        <p style="text-align:center;font-size: smaller;"><strong>Insurance Package</strong></p>
+                                <p style="text-align:center;font-size: smaller;" id="user-role">Samsung J1 + $20 premiun</p>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 divider text-center"></div>
+                                    <div class="col-lg-6 left" style="text-align:center;overflow-wrap: break-word;">
+                                        <h4><p style="text-align: center;"><strong id="user-globe-rank">$60</strong></p></h4>
+                                        <p><small class="label label-success">Current Account Balance</small></p>
+                                        <!--<button class="btn btn-success btn-block"><span class="fa fa-plus-circle"></span> Follow </button>-->
+                                    </div>
+                                    <div class=" col-lg-6 left" style="text-align:center;overflow-wrap: break-word;">
+                                        <h4><p style="text-align: center;"><strong id="user-college-rank">9 months</strong></p></h4>
+                                        <p> <small class="label label-warning">Remaining Months</small></p>
+                                    </div>
+
+        <hr />
+
+        <p>
+        ...
+        </p>
+
+
+      </div> <!--End column-->
+    </div> <!--End row-->
+  </div>
+
+</body>
+</html>
+
+{% endblock %}

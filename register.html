@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>iSave</title>
+<style>
+
+    body{
+    background: rgba(124, 129, 154, 0.2);
+    }
+
+    #bod{
+    margin-left: 300px;
+    margin-right: 300px;
+    padding: 20px 40px 15px 40px;
+    background: rgba(124, 129, 154, 0.15);
+
+    border-radius: 20px;
+    }
+</style>
+
+</head>
+<body>
+<br/>
+<div id="bod">
+<h2>Create an account</h2>
+    <br/>
+{% from "_formhelpers.html" import render_field %}
+<form method='POST' action="/register">
+
+        {{ form.csrf_token }}
+    <div class="row">
+        <div class="col">
+            <div class="form-group">{{ render_field(form.first_name, class_="form-control") }}</div>
+        </div>
+        <div class="col">
+            <div class="form-group">{{ render_field(form.last_name, class_="form-control") }}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">{{ render_field(form.username, class_="form-control") }}</div>
+        </div>
+        <div class="col">
+            <div class="form-group">{{ render_field(form.phone_number, class_="form-control") }}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">{{ render_field(form.email, class_="form-control") }}</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">{{ render_field(form.password, class_="form-control") }}</div>
+        </div>
+         <div class="col">
+            <div class="form-group">{{ render_field(form.confirm, class_="form-control") }}</div>
+         </div>
+    </div>
+      {{ render_field(form.accept_tos) }}
+
+    <p><input type="submit" value="Sign Up" class="btn btn-primary"></p>
+
+</form>
+</div>
+<br/>
+<br/>
+</body>
+</html>
+
+{% endblock %}
